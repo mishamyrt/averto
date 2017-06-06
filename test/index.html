@@ -43,25 +43,29 @@
 
         function start() {
             var $Av = new Averto();
-            document.getElementById('default').onclick = function() {
+            document.getElementById('default').onclick = function(e) {
+                e.preventDefault();
                 $Av.throw({
                     message: 'Test alert'
                 })
             };
-            document.getElementById('customtitle').onclick = function() {
+            document.getElementById('customtitle').onclick = function(e) {
+                e.preventDefault();
                 $Av.throw({
                     title: 'Alert custom title',
                     message: 'Alert describtion'
                 })
             };
-            document.getElementById('wautohide').onclick = function() {
+            document.getElementById('wautohide').onclick = function(e) {
+                e.preventDefault();
                 $Av.throw({
                     title: 'Alert title',
                     autohide: false,
                     message: 'This alert does not automatically disappear. Press enter or escape'
                 })
             };
-            document.getElementById('warning').onclick = function() {
+            document.getElementById('warning').onclick = function(e) {
+                e.preventDefault();
                 $Av.throw({
                     title: 'Warning',
                     autohide: false,
@@ -69,7 +73,9 @@
                     message: 'Text should be black'
                 })
             };
-            document.getElementById('randomcolor').onclick = function() {
+            document.getElementById('randomcolor').onclick = function(e) {
+                e.preventDefault();
+
                 function getRandomColor() {
                     var letters = '0123456789ABCDEF';
                     var color = '#';
@@ -85,7 +91,8 @@
                     message: 'Test for adaptive foreground color. Background is ' + a
                 })
             };
-            document.getElementById('blocking').onclick = function() {
+            document.getElementById('blocking').onclick = function(e) {
+                e.preventDefault();
                 $Av.throw({
                     title: 'Warning with block',
                     autohide: false,
