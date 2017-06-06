@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Averto test</title>
+    <script src="../source/averto.js"></script>
+    <style>
+        body,
+        html {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .test {
+            max-width: 700px;
+            margin: 0 auto;
+            border-bottom: 1px solid #dcdcdc;
+            padding-bottom: 13px;
+        }
+        
+        .test a {
+            text-decoration: none;
+            display: inline-block;
+            transition: background .25s ease-out;
+            background: #ff770d;
+            color: #fff;
+            padding: 7px 20px;
+            border-radius: 4px;
+        }
+        
+        .test a:hover {
+            background: #d65300;
+            transition: background 0s;
+        }
+    </style>
+    <script>
+        if (document.readyState != 'loading') {
+            start();
+        } else {
+            document.addEventListener('DOMContentLoaded', start);
+        }
+
+        function start() {
+            var $Av = new Averto();
+            document.getElementById('default').onclick = function() {
+                $Av.throw({
+                    message: 'Test alert'
+                })
+            };
+            document.getElementById('customtitle').onclick = function() {
+                $Av.throw({
+                    title: 'Alert custom title',
+                    message: 'Alert describtion'
+                })
+            };
+            document.getElementById('wautohide').onclick = function() {
+                $Av.throw({
+                    title: 'Alert title',
+                    autohide: false,
+                    message: 'This alert does not automatically disappear. Press enter or escape'
+                })
+            };
+            document.getElementById('warning').onclick = function() {
+                $Av.throw({
+                    title: 'Warning',
+                    autohide: false,
+                    color: '#ffda4b',
+                    message: 'Text should be black'
+                })
+            };
+            document.getElementById('randomcolor').onclick = function() {
+                function getRandomColor() {
+                    var letters = '0123456789ABCDEF';
+                    var color = '#';
+                    for (var i = 0; i < 6; i++) {
+                        color += letters[Math.floor(Math.random() * 16)];
+                    }
+                    return color;
+                }
+                let a = getRandomColor();
+                $Av.throw({
+                    title: 'Random test',
+                    color: a,
+                    message: 'Test for adaptive foreground color. Background is ' + a
+                })
+            };
+            document.getElementById('blocking').onclick = function() {
+                $Av.throw({
+                    title: 'Warning with block',
+                    autohide: false,
+                    blocking: true,
+                    color: '#ffda4b',
+                    message: 'Other buttons shoud be unclickeble while warning is shown'
+                })
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <div class="test">
+        <h2>Default</h2>
+        <a id="default" href="#">Click me</a>
+    </div>
+    <div class="test">
+        <h2>Custom title</h2>
+        <a id="customtitle" href="#">Click me</a>
+    </div>
+    <div class="test">
+        <h2>Without autohide</h2>
+        <a id="wautohide" href="#">Click me</a>
+    </div>
+    <div class="test">
+        <h2>Warning (custom color)</h2>
+        <a id="warning" href="#">Click me</a>
+    </div>
+    <div class="test">
+        <h2>Random color</h2>
+        <a id="randomcolor" href="#">Click me</a>
+    </div>
+    <div class="test">
+        <h2>Blocking</h2>
+        <a id="blocking" href="#">Click me</a>
+    </div>
+</body>
+
+</html>
