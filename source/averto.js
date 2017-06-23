@@ -6,8 +6,51 @@ let Averto = class Averto {
     avertoBlock.innerHTML =
       '<div class="averto-box"><div class="averto-gradient"><span class="averto-title"></span><span class="averto-message"></span></div></div>';
     let style = document.createElement("style");
-    style.innerHTML =
-      ".averto{pointer-events:none;position:fixed;top:0;left:0;width:100%;height:100%}.averto.is__blocking{pointer-events:all}.averto-box{bottom:85px;position:absolute;display:inline-block;opacity:0;transition:opacity .2s .15s ease-out,transform .5s cubic-bezier(.43,.18,.78,.36);color:#fff;max-width:470px;min-width:270px;border-radius:4px;transform:translateY(150px);margin:0 auto}.averto.is__visible .averto-box{opacity:1;transform:translateY(0);transition:opacity .25s ease-out,transform .5s cubic-bezier(.075,.82,.165,1)}.averto-gradient{padding:22px 23px;box-shadow:0 16px 31px -2px rgba(0,0,0,.17);background:linear-gradient(to bottom,rgba(255,255,255,.1) 0%,rgba(0,0,0,.1) 100%)}.averto-message,.averto-title{font-size:1.1em}.averto-title{line-height:1.1em;display:block;font-weight:700}.averto-title,.avertoBox-message{cursor:default}";
+    style.innerHTML = `.averto{
+          pointer-events:none;
+          position:fixed;
+          top:0;
+          left:0;
+          width:100%;
+          height:100%
+        }
+        .averto.is__blocking{
+            pointer-events:all
+        }
+        .averto-box{
+            bottom:85px;
+            position:absolute;
+            display:inline-block;
+            opacity:0;
+            transition:opacity .2s .15s ease-out,transform .5s cubic-bezier(.43,.18,.78,.36);
+            color:#fff;
+            max-width:470px;
+            min-width:270px;
+            border-radius:4px;
+            transform:translateY(150px);
+            margin:0 auto
+        }
+        .averto.is__visible .averto-box{
+            opacity:1;
+            transform:translateY(0);
+            transition:opacity .25s ease-out,transform .5s cubic-bezier(.075,.82,.165,1)
+        }
+        .averto-gradient{
+            padding:22px 23px;
+            box-shadow:0 16px 31px -2px rgba(0,0,0,.17);
+            background:linear-gradient(to bottom,rgba(255,255,255,.1) 0%,rgba(0,0,0,.1) 100%)
+        }
+        .averto-message,.averto-title{
+            font-size:1.1em
+        }
+        .averto-title{
+            line-height:1.1em;
+            display:block;
+            font-weight:700
+        }
+        .averto-title, .averto-message{
+            cursor:default
+        }`;
     document.body.appendChild(avertoBlock);
     document.body.appendChild(style);
     this.message = document.querySelector(".averto-message");
@@ -17,6 +60,7 @@ let Averto = class Averto {
     this.wrapper = document.querySelector(".averto");
     this.visible = false;
     this.isListen = false;
+    this.onWiggle = false;
   }
   throw(data) {
     if (!this.visible && data.message != undefined) {
@@ -56,7 +100,7 @@ let Averto = class Averto {
           }, timeout);
         }
       });
-    
+
       function hexToRgb(hex) {
         let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
         return result
@@ -71,6 +115,9 @@ let Averto = class Averto {
   }
   hide() {
     if (this.visible) {
+      if (this.onWiggle) {
+        this.onWiggle = false;
+      }
       clearTimeout(this.timeout);
       this.wrapper.classList.remove("is__visible");
       this.wrapper.classList.remove("is__blocking");
@@ -78,22 +125,27 @@ let Averto = class Averto {
     }
   }
   _wiggle() {
+    let draw = (min, max, box) => {
+      if (this.onWiggle) {
+        this.box.style.transition = "opacity 0.2s";
+        let pos =
+          19 / (Math.pow(min, 1.15) / 10 + 0.5 - 0.05) * Math.sin(min / 2);
+        ++min;
+        this.box.style.transform = "translateX(" + pos + "px)";
+        if (min < max) {
+          requestAnimationFrame(function() {
+            draw(min, max, box);
+          });
+        } else {
+          this.onWiggle = false;
+        }
+      } else {
+        this.box.style.transition = "";
+        this.box.style.transform = "";
+      }
+    };
+    this.onWiggle = true;
     draw(0, 70, this.box);
-    function draw(min, max, box) {
-      box.style.transition = "opacity 0.2s";
-      let pos = (19 / (Math.pow(min, 1.15) / 10 + 0.5 - 0.05) * Math.sin(min / 2));
-      min += 1;
-      box.style.transform = "translateX(" + pos + "px)";
-      if (min < max) {
-        requestAnimationFrame(function() {
-          draw(min, max, box);
-        });
-      }
-      else{
-          box.style.transition = "";
-          box.style.transform = "";
-      }
-    }
   }
   _listen() {
     if (!this.isListen) {
@@ -104,23 +156,22 @@ let Averto = class Averto {
           if ((e.keyCode == 13 || e.keyCode == 27) && this.visible) {
             e.preventDefault();
             this.hide();
-          }
-          else{
-              this._wiggle();
+          } else {
+            this._wiggle();
           }
         },
         true
       );
       this.wrapper.onclick = () => {
-        if (this.wrapper.classList.contains('is__blocking')){
-            this._wiggle();
+        if (this.wrapper.classList.contains("is__blocking")) {
+          this._wiggle();
         }
       };
       this.gradient.onclick = () => {
-          if (this.wrapper.classList.contains('is__blocking')){
+        if (this.wrapper.classList.contains("is__blocking")) {
           this.hide();
         }
-      }
+      };
     }
   }
 };
