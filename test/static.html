@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Averto test</title>
+    <script src="../source/averto.static.js"></script>
+    <style>
+        body,
+        html {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .test {
+            max-width: 700px;
+            margin: 0 auto;
+            border-bottom: 1px solid #dcdcdc;
+            padding-bottom: 13px;
+        }
+        
+        .test a {
+            text-decoration: none;
+            display: inline-block;
+            transition: background .25s ease-out;
+            background: #ff770d;
+            color: #fff;
+            padding: 7px 20px;
+            border-radius: 4px;
+        }
+        
+        .test a:hover {
+            background: #d65300;
+            transition: background 0s;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            let Av = new Averto();
+            document.getElementById('default').onclick = function(e) {
+                e.preventDefault();
+                Av.throw({
+                    message: 'Test alert'
+                })
+            };
+        });
+    </script>
+</head>
+
+<body>
+    <div class="test">
+        <h2>Default</h2>
+        <a id="default" href="#">Click me</a>
+    </div>
+    <div class="test">
+        <h2>Custom title</h2>
+        <a id="customtitle" href="#">Click me</a>
+    </div>
+    <div class="test">
+        <h2>Without autohide</h2>
+        <a id="wautohide" href="#">Click me</a>
+    </div>
+    <div class="test">
+        <h2>Warning (custom color)</h2>
+        <a id="warning" href="#">Click me</a>
+    </div>
+    <div class="test">
+        <h2>Random color</h2>
+        <a id="randomcolor" href="#">Click me</a>
+    </div>
+    <div class="test">
+        <h2>Blocking</h2>
+        <a id="blocking" href="#">Click me</a>
+    </div>
+</body>
+
+</html>
