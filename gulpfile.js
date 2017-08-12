@@ -15,9 +15,9 @@ const banner = ['/**',
 const release = './release/';
 const build = './build/';
 
-gulp.task('build', function() {
+gulp.task('default', function() {
     gulp.src('./source/*.js')
-        .pipe(babel({ presets: ['babili'] }))
+        .pipe(babel({ presets: ['es2016', 'es2015', 'babili'] }))
         .pipe(header(banner, { pkg: pkg }))
         .pipe(gulp.dest(build))
 });
