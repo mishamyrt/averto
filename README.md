@@ -53,10 +53,10 @@ $ npm install mishamyrt-averto --save-dev
 Then, use it as CommonJS module somewhere in your program:
 
 ```js
-var Averto = require('mishamyrt-averto');
+var Averto = require('mishamyrt-averto')
 
 // Modifies the DOM, adjusts itself
-Averto.initiate();
+Averto.initiate()
 ```
 
 ## Options
