@@ -4,7 +4,7 @@ const css = require('./averto.css').toString()
 export default () => {
     const avertoContainer = document.createElement('div')
     avertoContainer.innerHTML =
-    '<div class="averto-box"><div class="averto-gradient"><span class="averto-title"></span><span class="averto-message"></span></div></div>'
+        '<div class="averto-box"><div class="averto-gradient"><span class="averto-title"></span><span class="averto-message"></span></div></div>'
     avertoContainer.className = 'averto'
     const style = document.createElement('style')
     style.innerHTML = css

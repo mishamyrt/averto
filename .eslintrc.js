@@ -174,7 +174,7 @@ module.exports = {
         ],
         "one-var-declaration-per-line": "error",
         "operator-assignment": "off",
-        "operator-linebreak": "error",
+        "operator-linebreak": "off",
         "padded-blocks": [
             "error",
             "never"

@@ -1,5 +1,9 @@
 import generateNode from './generateNode'
-import { contrastLevel, generateBoxShadow, hexToRGB } from './color'
+import {
+    contrastLevel,
+    generateBoxShadow,
+    hexToRGB,
+} from './color'
 
 const VISIBLE_CLASS = 'is__visible'
 const BLOCKING_CLASS = 'is__blocking'
@@ -25,7 +29,7 @@ export default class Averto {
 
     static _keyDown(e) {
         if ((e.keyCode === 13 ||
-             e.keyCode === 27) && this.visible) {
+                e.keyCode === 27) && this.visible) {
             e.preventDefault()
             this._hide()
         }
