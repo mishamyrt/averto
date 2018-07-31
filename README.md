@@ -86,3 +86,5 @@ Averto.show({
 ## Supported browsers
 
 I support IE 11, Safari 10+ and the latest versions of Chrome, Firefox and Edge. Averto could work in the older versions too, but i don’t do anything specific to maintain its compatibility with them and don’t test it there.
+
+[ci]: https://travis-ci.org/mishamyrt/averto
