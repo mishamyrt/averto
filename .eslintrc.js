@@ -213,7 +213,7 @@ module.exports = {
         "semi-spacing": "error",
         "sort-imports": ["error", {
             "memberSyntaxSortOrder": ["none", "single", "all", "multiple"]
-            }],
+        }],
         "sort-vars": "off",
         "space-before-blocks": "error",
         "space-before-function-paren": [
@@ -234,24 +234,24 @@ module.exports = {
         "valid-jsdoc": [
             "error",
             {
-              "requireReturn": false,
-              "requireParamDescription": false,
-              "requireReturnDescription": false,
-              "prefer": {
-                "return": "returns",
-                "augments": "extends",
-                "defaultvalue": "default",
-                "arg": "param",
-                "argument": "param",
-                "prop": "property"
-              },
-              "preferType": {
-                "string": "String",
-                "number": "Number",
-                "object": "Object",
-                "array": "Array",
-                "function": "Function"
-              }
+                "requireReturn": false,
+                "requireParamDescription": false,
+                "requireReturnDescription": false,
+                "prefer": {
+                    "return": "returns",
+                    "augments": "extends",
+                    "defaultvalue": "default",
+                    "arg": "param",
+                    "argument": "param",
+                    "prop": "property"
+                },
+                "preferType": {
+                    "string": "String",
+                    "number": "Number",
+                    "object": "Object",
+                    "array": "Array",
+                    "function": "Function"
+                }
             }
         ],
         "vars-on-top": "off",

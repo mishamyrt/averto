@@ -4,7 +4,7 @@ const webpack = require('webpack')
 const packageJson = require('./package.json')
 
 const license =
-`Averto ${packageJson.version}
+    `Averto ${packageJson.version}
 @homepage ${packageJson.homepage}
 @license ${packageJson.license}`
 
@@ -14,12 +14,10 @@ const plugins = [
 
 module.exports = {
     module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use: [ 'css-to-string-loader', 'css-loader', 'csso-loader' ],
-            },
-        ],
+        rules: [{
+            test: /\.css$/,
+            use: ['css-to-string-loader', 'css-loader', 'csso-loader'],
+        }],
     },
     entry: {
         averto: './source/averto.js',
