@@ -3,7 +3,7 @@
 
 <head>
     <title>Averto test</title>
-    <script src="../source/averto.js"></script>
+    <script src="../dist/averto.js"></script>
     <style>
         body,
         html {
@@ -42,23 +42,22 @@
         }
 
         function start() {
-            var Av = new Averto();
             document.getElementById('default').onclick = function(e) {
                 e.preventDefault();
-                Av.throw({
+                Averto.show({
                     message: 'Test alert'
                 })
             };
             document.getElementById('customtitle').onclick = function(e) {
                 e.preventDefault();
-                Av.throw({
+                Averto.show({
                     title: 'Alert custom title',
                     message: 'Alert describtion'
                 })
             };
             document.getElementById('wautohide').onclick = function(e) {
                 e.preventDefault();
-                Av.throw({
+                Averto.show({
                     title: 'Аверто',
                     color: '#a70073',
                     autohide: false,
@@ -67,7 +66,7 @@
             };
             document.getElementById('warning').onclick = function(e) {
                 e.preventDefault();
-                Av.throw({
+                Averto.show({
                     title: 'Warning',
                     autohide: false,
                     color: '#ffda4b',
@@ -86,7 +85,7 @@
                     return color;
                 }
                 let a = getRandomColor();
-                Av.throw({
+                Averto.show({
                     title: 'Random test',
                     color: a,
                     message: 'Test for adaptive foreground color. Background is ' + a
@@ -94,7 +93,7 @@
             };
             document.getElementById('blocking').onclick = function(e) {
                 e.preventDefault();
-                Av.throw({
+                Averto.show({
                     title: 'Warning with block',
                     autohide: false,
                     blocking: true,
