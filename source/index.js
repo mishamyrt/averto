@@ -21,11 +21,22 @@ export default class Averto {
         this.message = block.message
         this.visible = false
         document.body.appendChild(this.container)
+        window.addEventListener('keydown', (e) => {
+            this._keyDown(e)
+        }, true);
         this.box.onclick = () => {
             this._hide()
         }
+        
     }
 
+    static _keyDown(e) {
+        if ((e.keyCode === 13 ||
+             e.keyCode === 27) && this.visible) {
+            e.preventDefault();
+            this._hide();
+        }
+    }
     static _applyParameters(parameters) {
         const rgb = hexToRGB(parameters.color)
         this.title.innerText = parameters.title
