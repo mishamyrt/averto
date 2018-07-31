@@ -1,11 +1,5 @@
-'use strict'
-
 import generateNode from './generateNode'
-import {
-    contrastLevel,
-    generateBoxShadow,
-    hexToRGB
-} from './color'
+import { contrastLevel, generateBoxShadow, hexToRGB } from './color'
 
 const VISIBLE_CLASS = 'is__visible'
 const BLOCKING_CLASS = 'is__blocking'
@@ -23,18 +17,17 @@ export default class Averto {
         document.body.appendChild(this.container)
         window.addEventListener('keydown', (e) => {
             this._keyDown(e)
-        }, true);
+        }, true)
         this.box.onclick = () => {
             this._hide()
         }
-        
     }
 
     static _keyDown(e) {
         if ((e.keyCode === 13 ||
              e.keyCode === 27) && this.visible) {
-            e.preventDefault();
-            this._hide();
+            e.preventDefault()
+            this._hide()
         }
     }
     static _applyParameters(parameters) {
@@ -47,7 +40,7 @@ export default class Averto {
         this._setModal(parameters.blocking)
     }
 
-    static _setModal (isModal) {
+    static _setModal(isModal) {
         this.blocking = isModal
         this.container.classList.toggle(BLOCKING_CLASS, isModal)
     }
