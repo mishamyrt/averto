@@ -63,6 +63,7 @@ Averto.initiate();
 
 You can configure Averto by specifying parameters when calling functon:
 
+```js
 <!-- Head -->
 Averto.show({
     timeout: 3000,
@@ -73,6 +74,7 @@ Averto.show({
     blocking: false,
 })
 ```
+
 * `timeout` - Delay before message will hidden
 * `autohide` - It seems to be obvious
 * `color` - Why do I write documentation?
