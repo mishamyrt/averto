@@ -4,8 +4,8 @@
     "description": "Beautiful alternative to alert()",
     "main": "./source/index.js",
     "scripts": {
-        "test": "eslint ./",
-        "script": "npx webpack -p",
+        "test": "npm run check-codestyle",
+        "build": "npx webpack -p",
         "check-codestyle": "eslint ./",
         "fix-codestyle": "eslint ./ --fix && npx js-beautify -r ./source/*",
         "preintegration-tests": "npm run build"

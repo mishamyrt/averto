@@ -4,9 +4,9 @@ const webpack = require('webpack')
 const packageJson = require('./package.json')
 
 const license =
-    `Averto ${packageJson.version}
-@homepage ${packageJson.homepage}
-@license ${packageJson.license}`
+    `Averto ${packageJson.version}\n` +
+    `@homepage ${packageJson.homepage}\n` +
+    `@license ${packageJson.license}`
 
 const plugins = [
     new webpack.BannerPlugin(license),
