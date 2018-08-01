@@ -1,4 +1,4 @@
-# Averto [![Build Status](https://travis-ci.org/mishamyrt/averto.svg?branch=travis-ci-intergration)][ci]
+# Averto [![Build Status](https://travis-ci.org/mishamyrt/averto.svg?branch=master)][ci]
 
 Beautiful and light alternative to alert().
 
