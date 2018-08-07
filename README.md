@@ -19,7 +19,7 @@ This means that the notification does not block the interface.
 
 Or use npm:
 
-```bash
+```sh
 $ npm install mishamyrt-averto --save
 ```
 
@@ -55,7 +55,7 @@ Averto can be used as a module, so you can use it within webpack or rollup build
 
 First, install Averto using npm:
 
-```bash
+```sh
 $ npm install mishamyrt-averto --save-dev
 ```
 
