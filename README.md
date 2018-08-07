@@ -1,6 +1,6 @@
 # Averto [![Build Status](https://travis-ci.org/mishamyrt/averto.svg?branch=master)][ci]
 
-Beautiful and light alternative to alert().
+![Dialog screenshot](https://raw.githubusercontent.com/mishamyrt/averto/readme-update/img/screenshot.png)
 
 Averto does not require any dependencies and works on IE11.
 
