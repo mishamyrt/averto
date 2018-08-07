@@ -1,6 +1,7 @@
 # Averto [![Build Status](https://travis-ci.org/mishamyrt/averto.svg?branch=master)][ci]
 
-![Dialog screenshot](https://raw.githubusercontent.com/mishamyrt/averto/readme-update/img/screenshot.png)
+<img src="https://raw.githubusercontent.com/mishamyrt/averto/readme-update/img/screenshot.png" align="right"
+     alt="Averto dialog screenshot" width="400" height="188">
 
 Averto does not require any dependencies and works on IE11.
 
