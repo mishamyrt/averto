@@ -40,6 +40,7 @@ export default class Averto {
         this.message.innerText = parameters.message
         this.box.style.boxShadow = generateBoxShadow(rgb)
         this.box.style.backgroundColor = parameters.color
+        this.container.style.backgroundColor = parameters.debug.background
         this.box.style.color = contrastLevel(rgb) > 135 ? '#000' : '#FFF'
         this._setModal(parameters.blocking)
     }
@@ -55,6 +56,9 @@ export default class Averto {
             autohide: true,
             color: '#F31D2F',
             title: '',
+            debug: {
+                background: 'transparent',
+            },
             message: '',
             blocking: false,
         }
@@ -68,6 +72,7 @@ export default class Averto {
         requestAnimationFrame(() => {
             clearTimeout(this.waiter)
             this._setModal(false)
+            this.container.style.backgroundColor = ''
             this.container.classList.remove(VISIBLE_CLASS)
             this.visible = false
         })
