@@ -44,7 +44,6 @@ If installed with npm:
 Then, call the function 
 
 ```html
-<!-- Head -->
 Averto.show({
     title: 'Hello world!'
 })
