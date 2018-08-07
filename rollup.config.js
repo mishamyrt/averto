@@ -20,9 +20,9 @@ export default {
             ],
         }),
         babel({
+            exclude: 'node_modules/**',
             presets: [['env', { modules: false }]],
             plugins: ['external-helpers'],
-            externalHelpers: true,
         }),
         terser(),
     ],
