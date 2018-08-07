@@ -8,7 +8,7 @@ Averto is beautiful replacement for the `alert()` function.
 **UX.** The main advantage is that the averto is not modal. 
 This means that the notification does not block the interface.
 
-**Small.** {x} bytes (minified and gzipped). No dependencies.
+**Small.** 1.8 kilobytes (minified and gzipped). No dependencies.
 
 **Accessible.** All options are used to increase availability.
 
