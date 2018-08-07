@@ -64,7 +64,7 @@ Then, use it as CommonJS or ES6 module somewhere in your program:
 
 ```js
 // ES6
-import Averto from 'ishamyrt-averto'
+import Averto from 'mishamyrt-averto'
 // CommonJS
 var Averto = require('mishamyrt-averto')
 
