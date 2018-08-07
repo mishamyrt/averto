@@ -3,7 +3,15 @@
 <img src="https://raw.githubusercontent.com/mishamyrt/averto/readme-update/img/screenshot.png" align="right"
      alt="Averto dialog screenshot" width="400" height="188">
 
-Averto does not require any dependencies and works on IE11.
+Averto is beautiful replacement for the `alert()` function.
+
+**UX.** The main advantage is that the averto is not modal. 
+This means that the notification does not block the interface.
+
+**Small.** {x} bytes (minified and gzipped). No dependencies.
+
+**Accessible.** All options are used to increase availability.
+
 
 ## Get
 
@@ -42,9 +50,9 @@ Averto.show({
 })
 ```
 
-### Using as a CommonJS module
+### Using as a CommonJS or ES6 module
 
-Averto can be used as a CommonJS module, so you can use it within webpack or browserify build systems.
+Averto can be used as a module, so you can use it within webpack or rollup build systems.
 
 First, install Averto using npm:
 
@@ -52,9 +60,12 @@ First, install Averto using npm:
 $ npm install mishamyrt-averto --save-dev
 ```
 
-Then, use it as CommonJS module somewhere in your program:
+Then, use it as CommonJS or ES6 module somewhere in your program:
 
 ```js
+// ES6
+import Averto from 'ishamyrt-averto'
+// CommonJS
 var Averto = require('mishamyrt-averto')
 
 // Modifies the DOM, adjusts itself
@@ -83,6 +94,17 @@ Averto.show({
 * `title` - Message title. The only mandatory parameter
 * `message` - Text for the second line
 * `blocking` - Makes the message modal
+
+Also there is a parameter for debugging:
+
+```js
+parameters.debug = {
+    background = '#fff'
+}
+```
+
+Dyes the container's background to the specified one
+
 
 ## Supported browsers
 
