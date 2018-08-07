@@ -77,7 +77,6 @@ Averto.initiate()
 You can configure Averto by specifying parameters when calling functon:
 
 ```js
-<!-- Head -->
 Averto.show({
     timeout: 3000,
     autohide: true,
