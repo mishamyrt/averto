@@ -2,6 +2,7 @@ import babel from 'rollup-plugin-babel'
 import cssnano from 'cssnano'
 import postcss from 'rollup-plugin-postcss'
 import { terser } from 'rollup-plugin-terser'
+const autoprefixer = require('autoprefixer')
 
 export default {
     input: 'source/averto.js',
@@ -15,6 +16,7 @@ export default {
                 cssnano({
                     preset: 'default',
                 }),
+                autoprefixer({}),
             ],
         }),
         babel({
