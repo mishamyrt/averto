@@ -6,12 +6,25 @@ https://prismjs.com/download.html#themes=prism&languages=markup+clike+javascript
  * @author Lea Verou
  */
 
+ code,
+.code {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.code {
+    background: #f6f8fa;
+    border-radius: 2px;
+}
+
+.codeblock {
+    margin-bottom: 15px;
+    background-color: #f6f8fa;
+}
 code[class*="language-"],
 pre[class*="language-"] {
 	color: black;
 	background: none;
 	text-shadow: 0 1px white;
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
