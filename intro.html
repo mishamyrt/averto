@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <title>Averto</title>
+</head>
+
+<body>
+    <div class="hello_averto">
+        <div class="hello_averto-box" style="box-shadow: rgba(55, 104, 243, 0.61) 0px 12px 85px 0px; background-color: rgb(55, 104, 243); color: rgb(255, 255, 255);">
+            <div class="hello_averto-gradient">
+                <span class="hello_averto-title">Averto</span>
+                <span class="hello_averto-message">Beautiful and light alternative to alert()</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        let averto = document.querySelector('.hello_averto')
+        setTimeout(() => {
+            averto.classList.add('is__visible')
+            setTimeout(() => {
+                averto.classList.remove('is__visible')
+            }, 2000)
+        }, 500)
+    </script>
+</body>
+
+</html>

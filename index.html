@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/page_style.css" />
+    <script src="./js/prism.js"></script>
+    <script src="./js/averto.js"></script>
+    <script src="./js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/prism.css" />
+    <title>Averto</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            <a href="https://github.com/mishamyrt/averto">Averto</a> notification generator
+        </h1>
+
+        <p>Averto is beautiful, light and accessible replacement for the <span class="code">alert()</span> function.</p>
+
+        <p>The main advantage is that the averto is not modal. This means that the notification does not block the interface.</p>
+
+        <p>Try it yourself!</p>
+
+        <form class="form">
+            <div class="form-line">
+                <span class="form-title">Title:</span>
+                <input class="form-input __title" type="text" value="Averto" name="title">
+            </div>
+            <div class="form-line">
+                <span class="form-title">Message:</span>
+                <input class="form-input __message" type="text" value="Beautiful and light alternative to alert()" name="title">
+            </div>
+            <div class="form-line">
+                <input type="color" class="form-color-pseudo">
+                <span class="form-title">Color:</span>
+                <div class="form-colorInput">
+                    <span class="form-color" style="background-color:#3768F3"></span>
+                    <input class="form-input __colorText" type="text" value="#3768F3" name="title">
+                    <a class="form-color-random" href="#"></a>
+                </div>
+            </div>
+            <div class="form-line">
+                <span class="form-title">Autohide:</span>
+                <div class="form-checkbox">
+                    <input class="form-check __checkbox __autohide" type="checkbox" checked name="title">
+                </div>
+
+            </div>
+            <div class="form-line">
+                <span class="form-title">Timeout:</span>
+                <input class="form-input __number __timeout" type="number" step="50" min="0" max="5000" value="2000" name="title">
+            </div>
+            <div class="form-line">
+                <span class="form-title">Modal:</span>
+                <div class="form-checkbox">
+                    <input class="form-check __checkbox __modal" type="checkbox" name="title">
+                </div>
+            </div>
+            <button class="form-button">Show dialog</button>
+        </form>
+        <h2>Example of this usage</h2>
+        <p>This code will show same dialog, like you configured before.</p>
+</div>
+<div class="codeblock">
+        <pre><code class="language-js">
+Averto.show({
+    timeout: 2000,
+    autohide: true,
+    color: '#3768F3',
+    title: 'Averto',
+    message: 'Beautiful and light alternative to alert()',
+    blocking: false,
+})
+        </code></pre>
+    </div>
+<div class="container">
+    <h2>Get</h2>
+    <p><a href="https://github.com/mishamyrt/averto/archive/master.zip">Download the repository code</a> and move <span class="code">dist/averto.js</span> to the desired directory.</p>
+    <p>Or use npm:</p>
+</div>
+<div class="codeblock">
+    <pre><code class="language-bash">
+$ npm install mishamyrt-averto --save
+    </code></pre>
+</div>
+<div class="container">
+    <h2>Setup</h2>
+    <p>Link the file <span class="code">averto.js</span> from the compiled sources.</p>
+    <p>If downloaded directly:</p>
+</div>
+<div class="codeblock">
+    <pre><code class="language-html">
+&lt;!-- Head --&gt;
+&lt;script src=&quot;path/to/averto.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+    </code></pre>
+</div>
+<div class="container">
+    <p>If installed with npm:</p>
+</div>
+<div class="codeblock">
+<pre><code class="language-html">
+&lt;script src=&quot;node_modules/mishamyrt-averto/dist/averto.js&quot;
+        type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+</code></pre>
+</div>
+<div class="footer container">
+    <span>© 2018 <a href="https://github.com/mishamyrt">Misha Myrt</a></span>
+</div>
+</body>
+</html>
