@@ -1,7 +1,7 @@
 # Averto [![Build Status](https://travis-ci.org/mishamyrt/averto.svg?branch=master)][ci]
 
-<img src="https://raw.githubusercontent.com/mishamyrt/averto/master/img/screenshot.png" align="right"
-     alt="Averto dialog screenshot" width="400" height="188">
+<a href="http://mishamyrt.github.io/averto/"><img src="https://raw.githubusercontent.com/mishamyrt/averto/master/img/screenshot.png" align="right"
+     alt="Averto dialog screenshot" width="400" height="188"></a>
 
 Averto is beautiful replacement for the `alert()` function.
 
